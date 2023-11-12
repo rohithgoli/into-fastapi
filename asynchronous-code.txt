@@ -1,0 +1,31 @@
++ Asynchronous Code
+
+    + Meaning & Essence -->
+        Telling the computer/program through programming language that
+        THE need exists to wait for something else to finish at some point in the code
+            During this time, computer can perform some other work and come back to check
+        whether work is finished
+
+        Waiting for something else --> I/O operations
+        + relatively slow compared to the speed of processor & RAM memory
+        + Takes major part in overall Execution time --> I/O bound operations
+
+        Thus, here the computer/program need not to wait in idle manner until the slow task is entirely finished
+
++ Asynchronous code ---sometimes--> concurrency
++ Concurrency & Parallelism --> different things happening at the same time BUT DETAILS of each of this are different
++ In case of system with highly intense I/O bound operations, Make the system as Concurrent system (Common Sense)
+    eg: Asynchronous code for web APIs --> Highly Performant
+
++ We can have parallelism & asynchronicity at the same time --> Higher Performance but in general needs to be balanced
+
++ If work being done by CPU takes most of the execution time rather than waiting ---> CPU bound problems
+
++ ******
+    For Web Application --> Concurrency
+    For Machine Learning Systems --> Parallelism & Multiprocessing
+
+
++ Coroutines
+    + A fancy term for functionality of using asynchronous code with async and await
+

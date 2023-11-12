@@ -1,5 +1,13 @@
 ## Resources
 - [FastAPI Official Documentation](https://fastapi.tiangolo.com/)
+- [Features of FastAPI](https://fastapi.tiangolo.com/features/)
+- [Concurrency and async/await](https://fastapi.tiangolo.com/async/)
+  - **async def** syntax for path operation functions
+  - Concepts of **asynchronous code**, **concurrency**, **parallelism**
+- [Python Type Hints](https://fastapi.tiangolo.com/python-types/) -- typing module
+  - [Type hints cheat sheet](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
+
+
 
 ## Practice - Pre-requisites
 1. Install Python 3.8+
