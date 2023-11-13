@@ -29,3 +29,46 @@
 + Coroutines
     + A fancy term for functionality of using asynchronous code with async and await
 
+
++ ## Conclusion:
+    + Any CPU Intensive task (not I/O) would be prefferred for Parallelism.
+        Think about calculating the factorial vs taking input for the factorial.
+            The input can come at any time from different sources & you will typically have to wait
+            for a user to send that input. ---> A good case for Concurrency.
+
+            But once the user input is received it will actually start calculating which will be
+            CPU Intensive.
+
+    + Assume 2 users, and a case where our factorial calculation takes 1-minute. We have 8 CPU cores.
+        On 1 core, we run our fastAPI server, that receives input from the user anytime a user sends one.
+        User 2 could also sent simultaneously.
+
+        CASE 1:
+
+            User 1: --> Sends input at 7:00:00
+                        --> Received by server on core 1
+                        --> Core 1 starts another Python interpreter where the calculation starts at 7:00:01
+
+            User 2: --> Sends input at 7:00:01
+                        --> Received by server on core 1
+                        --> core 1 starts another Python interpreter where the calculation starts at 7:00:02
+
+            In this case, where the server was doing similar task that involved waiting
+                i.e,; receiving inputs from the user will benefit from async code
+
+        CASE 2:
+
+            User 1: --> Sends input at 7:00:00
+                        --> Received by server on Core 1
+                        --> Core 1 starts the calculation at 7:00:01 but on the same Core 1 (Not by starting another
+                            python interpreter)
+
+            User 2: --> Sends input at 7:00:01
+                        --> Received by server on Core 1
+                        --> Here User 2 faces delay of atleast 1 minute till the Core gets free from the Calculation
+
+            In this case, if We Don't add MultiProcessing for a CPU Intensive task, User 2 has to wait till
+            all computations just before User 2 are over. Thus Case 2 would benefit from Multi-Processing
+
+    + We typically receive an Input or send an output asynchronously, while whatever processing we do in the middle
+        to generate the output in parallel.

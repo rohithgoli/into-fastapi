@@ -6,7 +6,7 @@
   - Concepts of **asynchronous code**, **concurrency**, **parallelism**
 - [Python Type Hints](https://fastapi.tiangolo.com/python-types/) -- typing module
   - [Type hints cheat sheet](https://mypy.readthedocs.io/en/latest/cheat_sheet_py3.html)
-
+- [FastAPI official tutorial](https://fastapi.tiangolo.com/tutorial/)
 
 
 ## Practice - Pre-requisites

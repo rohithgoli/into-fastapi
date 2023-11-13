@@ -20,7 +20,7 @@ def read_root():
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
     # read_item(item_id: int, q: Optional[str] = None): --> Optional[str] is shortcut for Union[str, None]
-    #   Mind it, Using Optional does not indicate that the parameter is Optional for the function
+    # ******  Mind it, Using Optional does not indicate that the parameter is Optional for the function
     # read_item(item_id: int, q: str | None = None): --> Only available in Python 3.10+
     return {"item_id": item_id, "q": q}
 
