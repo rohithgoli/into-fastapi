@@ -1,0 +1,11 @@
+Concepts: --> https://docs.pydantic.dev/latest/concepts/models/
+
++ Models
+    Why ?
+        + One among primary ways to define schema in Pydantic
+        + Pydantic raises ValidationError when data cannot be successfully
+            parsed into a model instance.
+
+    What ?
+        + classes which inherit from pydantic.BaseModel & define fields
+            as annotated attributes
